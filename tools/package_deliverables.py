@@ -19,8 +19,8 @@ lines.extend(['## Interpretation limits','','The Google page displays standard a
 (OUT/'official_sources.md').write_text('\n'.join(lines),encoding='utf-8')
 (OUT/'source_access_evidence.json').write_text(json.dumps(evidence,indent=2))
 pdf=fitz.open(OUT/'assignment1_report.pdf')
-assert len(pdf)==9
-for i,s in enumerate(['Executive Summary','Part A','Part B1','Part B2','Part B3','References','Appendix A','Appendix B','Appendix C']):assert s in pdf[i].get_text(),(i,s)
+assert len(pdf)==8
+for i,s in enumerate(['Executive Summary','Part A','Part B1','Part B2','Part B3','References','Appendix A','Appendix B']):assert s in pdf[i].get_text(),(i,s)
 for page in pdf:assert abs(page.rect.width-595.3)<1 and abs(page.rect.height-841.9)<1
 f=load_workbook(OUT/'assignment1_models.xlsx',data_only=False);cached=load_workbook(OUT/'assignment1_models.xlsx',data_only=True);r=load_workbook(R/'recalc/assignment1_models.xlsx',data_only=True)
 count=0;diffs=[]
@@ -41,7 +41,7 @@ w=load_workbook(R/'scenario-output/assignment1_models.xlsx',data_only=True)
 scenario={'inputs':{'n':8,'google_price':14,'exchange_fte':.15},'ltv':w['CAC_LTV']['B8'].value,'exchange_tco':w['TCO']['B12'].value,'google_tco':w['TCO']['C12'].value,'google_savings':w['TCO']['B14'].value}
 assert abs(scenario['ltv']-18678.042437064752)<.0001
 assert scenario['exchange_tco']==221000 and scenario['google_tco']==248000 and scenario['google_savings']==-27000
-v={'pdf_pages':9,'body_pages':5,'reference_pages':1,'appendix_pages':3,'page_size':'A4','body_columns':2,'body_font':'Arial 11 pt; tables/captions 10 pt','formula_cells':count,'independently_recalculated_baseline_checks_passed':13,'cached_vs_recalculated_differences':len(diffs),'formula_errors':0,'native_excel_charts':2,'input_propagation_check':scenario,'official_source_pages_verified':len(evidence),'procurement_qualification':'Annual licensing is an illustrative budget; validate existing and required SE, Windows/CAL and SA/subscription entitlements and obtain current quotations before procurement','submission_status':'Not submitted; student VeriGuide receipt and official Signed Declaration not included'}
+v={'pdf_pages':8,'body_pages':5,'reference_pages':1,'appendix_pages':2,'page_size':'A4','body_columns':2,'body_font':'Arial 11 pt; tables/captions 10 pt','formula_cells':count,'independently_recalculated_baseline_checks_passed':13,'cached_vs_recalculated_differences':len(diffs),'formula_errors':0,'native_excel_charts':2,'input_propagation_check':scenario,'official_source_pages_verified':len(evidence),'procurement_qualification':'Annual licensing is an illustrative budget; validate existing and required SE, Windows/CAL and SA/subscription entitlements and obtain current quotations before procurement'}
 with zipfile.ZipFile(OUT/'assignment1_report.docx') as z:
  docxml=etree.fromstring(z.read('word/document.xml'))
 ns={'m':'http://schemas.openxmlformats.org/officeDocument/2006/math','w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
@@ -53,16 +53,17 @@ assert v['native_word_equations']>=40 and v['native_fractions']>=8 and v['native
 reporttext=' '.join(p.get_text() for p in pdf)
 assert not re.search(r'\b403\b|\bHTTP\b|egress|allowlist|network policy',reporttext,re.I)
 assert not re.search(r'n\.d\.-[a-z]|exp\(|\^\(',reporttext)
-v['editorial_checks']={'operational_access_errors_in_report':0,'ascii_exponent_formulas_in_report':0,'procurement_scope_pages':[5,9]}
+assert not re.search(r'Accessed:|Submission evidence|VeriGuide|Signed Declaration|Blackboard|NOT INCLUDED|17:00|submitting student|Appendix C',reporttext,re.I)
+v['editorial_checks']={'operational_access_errors_in_report':0,'ascii_exponent_formulas_in_report':0,'procurement_scope_pages':[5,7],'reference_access_dates_in_report':0,'submission_instructions_in_report':0}
 (OUT/'validation.json').write_text(json.dumps(v,indent=2))
 readme='''# Assignment 1 交付说明
 
-本套文件按你的案例制作，供本人审阅、修改后提交。
+本套文件包括案例研究报告、计算工作簿、图表及来源资料。
 
 ## 文件
 
 - assignment1_report.docx：可编辑英文报告；求和、分式、上下标和指数均为原生 Word 数学公式。
-- assignment1_report.pdf：Word 导出的 PDF，共 9 页。第 1–5 页为 A4、双栏、单倍行距正文，第 6 页为参考文献，第 7–9 页为附录。正文 Arial 11 pt；表格与图注 10 pt。
+- assignment1_report.pdf：Word 导出的 PDF，共 8 页。第 1–5 页为 A4、双栏、单倍行距正文，第 6 页为参考文献，第 7–8 页为参数及计算附录。正文 Arial 11 pt；表格与图注 10 pt。
 - assignment1_models.xlsx：9 张工作表，包含所有输入、CAC/LTV、Churn、TCO、四种敏感性组合、两个原生 Excel 图表、来源与核对项。蓝色输入可修改。
 - churn_chart / tco_chart：PNG、PDF、SVG 三种图表格式，均为初始基准情景的静态导出。
 - official_sources.md / sources.csv：英文官方来源、支持的具体论点、核验状态。
@@ -87,16 +88,7 @@ LTV 采用“当年贡献先发生、年末再流失”，现金在年末折现�
 
 ## 来源与采购边界
 
-Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。USD 12,000/年是许可规划预算。实际采购前应核对 SE、Exchange Server/CAL、Windows Server、SA/订阅权益、现有授权及可比报价；报告第 5 页和附录 C 已明确说明。
-
-## 提交前本人完成
-
-1. 检查论证、文字、引用、课程对辅助工具的规则，并按要求补入姓名、学号等资料。
-2. 完成学校规定的 VeriGuide，将真实 receipt 插入附录 C。
-3. 使用学校官方 Signed Declaration，亲自完成并签署后插入附录。报告的说明页不能替代声明。
-4. 重新导出最终 PDF，检查正文仍为五页，再提交 Blackboard。
-
-附件列明截止时间：2026 年 10 月 16 日 17:00 HKT。当前文件未提交，未生成或代签任何证明。
+Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。USD 12,000/年是许可规划预算。实际采购前应核对 SE、Exchange Server/CAL、Windows Server、SA/订阅权益、现有授权及可比报价；报告第 5 页及附录 A 已明确说明。
 
 ## 修改与复现
 

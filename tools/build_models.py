@@ -85,7 +85,7 @@ plt.close(fig)
 
 # Formula workbook, cached results supplied explicitly for non-calculating readers.
 wb=xlsxwriter.Workbook(OUT/'assignment1_models.xlsx')
-wb.set_properties({'title':'Assignment 1 — Exchange SE vs Google Workspace','subject':'Illustrative strategic and quantitative models, 2026–2030','author':'Student review draft','comments':'No vendor CAC, churn or cost observations are claimed.'})
+wb.set_properties({'title':'Assignment 1 — Exchange SE vs Google Workspace','subject':'Illustrative strategic and quantitative models, 2026–2030','author':'','comments':'No vendor CAC, churn or cost observations are claimed.'})
 wb.set_calc_mode('auto')
 fmt={
  'title':wb.add_format({'font_name':'Arial','font_size':17,'bold':True,'font_color':blue}),
@@ -118,8 +118,7 @@ notes=[
  'TCO: nominal USD cash costs, opening-2026 one-off payments, five annual recurring payments. 200 seats, fixed prices, no tax/inflation/discount, zero residual value. Common connectivity and endpoints are excluded equally.',
  'Sensitivity varies only Google subscription price and Exchange FTE at USD 80,000/FTE/year. A USD 14 plan is a cost stress, not an assertion of equal plan features.',
  'Sources maps the official documentation to specific claims and records publication/revision dates. Licensing, staffing and hardware inputs are planning assumptions; procurement requires current entitlements and comparable quotations.',
- 'Readiness: see Checks. Cached values are included; open in Excel/LibreOffice to recalculate after changing inputs. External PNG/PDF/SVG figures represent the original baseline and do not auto-refresh.',
- 'Submission: student must review all reasoning and citations, add identification as required, complete VeriGuide and the institution’s Signed Declaration, attach authentic evidence and submit via Blackboard.'
+ 'Model validation: see Checks. Cached values are included; open in Excel/LibreOffice to recalculate after changing inputs. External PNG/PDF/SVG figures represent the original baseline and do not auto-refresh.',
 ]
 for i,s in enumerate(notes):note(sh,3+3*i,s)
 sh=S['Inputs'];title(sh,'Inputs | All numbers are illustrative assumptions');headers(sh,2,['Parameter','Value','Units','Definition / boundary'])

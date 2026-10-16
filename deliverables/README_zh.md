@@ -1,11 +1,11 @@
 # Assignment 1 交付说明
 
-本套文件按你的案例制作，供本人审阅、修改后提交。
+本套文件包括案例研究报告、计算工作簿、图表及来源资料。
 
 ## 文件
 
 - assignment1_report.docx：可编辑英文报告；求和、分式、上下标和指数均为原生 Word 数学公式。
-- assignment1_report.pdf：Word 导出的 PDF，共 9 页。第 1–5 页为 A4、双栏、单倍行距正文，第 6 页为参考文献，第 7–9 页为附录。正文 Arial 11 pt；表格与图注 10 pt。
+- assignment1_report.pdf：Word 导出的 PDF，共 8 页。第 1–5 页为 A4、双栏、单倍行距正文，第 6 页为参考文献，第 7–8 页为参数及计算附录。正文 Arial 11 pt；表格与图注 10 pt。
 - assignment1_models.xlsx：9 张工作表，包含所有输入、CAC/LTV、Churn、TCO、四种敏感性组合、两个原生 Excel 图表、来源与核对项。蓝色输入可修改。
 - churn_chart / tco_chart：PNG、PDF、SVG 三种图表格式，均为初始基准情景的静态导出。
 - official_sources.md / sources.csv：英文官方来源、支持的具体论点、核验状态。
@@ -30,16 +30,7 @@ LTV 采用“当年贡献先发生、年末再流失”，现金在年末折现�
 
 ## 来源与采购边界
 
-Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。USD 12,000/年是许可规划预算。实际采购前应核对 SE、Exchange Server/CAL、Windows Server、SA/订阅权益、现有授权及可比报价；报告第 5 页和附录 C 已明确说明。
-
-## 提交前本人完成
-
-1. 检查论证、文字、引用、课程对辅助工具的规则，并按要求补入姓名、学号等资料。
-2. 完成学校规定的 VeriGuide，将真实 receipt 插入附录 C。
-3. 使用学校官方 Signed Declaration，亲自完成并签署后插入附录。报告的说明页不能替代声明。
-4. 重新导出最终 PDF，检查正文仍为五页，再提交 Blackboard。
-
-附件列明截止时间：2026 年 10 月 16 日 17:00 HKT。当前文件未提交，未生成或代签任何证明。
+Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。USD 12,000/年是许可规划预算。实际采购前应核对 SE、Exchange Server/CAL、Windows Server、SA/订阅权益、现有授权及可比报价；报告第 5 页及附录 A 已明确说明。
 
 ## 修改与复现
 

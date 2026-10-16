@@ -11,7 +11,7 @@
 - [可编辑 Word 报告](deliverables/assignment1_report.docx)
 - [Excel 计算工作簿](deliverables/assignment1_models.xlsx)
 - [完整文件包](deliverables/assignment1_package.zip)
-- [中文交付与提交说明](deliverables/README_zh.md)
+- [中文文件与模型说明](deliverables/README_zh.md)
 - [官方来源及访问状态](deliverables/official_sources.md)
 
 也可打开某个文件的 GitHub 页面，使用该页面的文件下载功能保存到电脑。
@@ -19,6 +19,5 @@
 
 ## 文件状态
 
-PDF 共 9 页：5 页正文、1 页参考文献、3 页附录。
-VeriGuide receipt、官方 Signed Declaration 和 Blackboard 提交需由提交者本人完成。
+PDF 共 8 页：5 页正文、1 页参考文献、2 页参数及计算附录。
 许可费用为模拟规划预算；实际采购需核对当前授权权益与报价。

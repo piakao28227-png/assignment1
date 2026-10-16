@@ -136,7 +136,7 @@ p('Google entered hosted organizational applications in 2006. Its 28 August anno
 p('The present Workspace pricing page describes business email and a wider productivity suite, with differentiated storage, meeting and management capabilities (Google, n.d.-a). Exchange SE primarily anchors this case’s messaging workload. The analysis therefore compares ways to meet a defined SME communications need, rather than asserting that the products contain identical features.')
 h('Scope and evidence',2)
 p('Part A evaluates platform mechanisms and industry structure. Part B1 takes the supplier’s perspective per enterprise account; B2 connects an integration scenario to churn and LTV; B3 takes the SME buyer’s perspective across 200 seats. Customer contribution is not the buyer’s cost saving.')
-p('All commercial and behavioral model inputs are illustrative assumptions. Official documentation supports product and API descriptions, rather than estimates of vendor CAC, churn or market share. The TCO figures are planning budgets; Section B3 and Appendix C identify the entitlement, quotation and operational checks required before procurement.')
+p('All commercial and behavioral model inputs are illustrative assumptions. Official documentation supports product and API descriptions, rather than estimates of vendor CAC, churn or market share. The TCO figures are planning budgets. Part B3 and Appendix A define the cost scope and licensing assumptions relevant to interpreting the comparison.')
 pagebreak()
 # Page 2
 h('Part A | Strategic Analysis')
@@ -247,7 +247,6 @@ sec2=D.add_section(WD_SECTION_START.NEW_PAGE);cols(sec2,1)
 h('References')
 for s in sorted(SOURCES,key=lambda s:(s['author'],s['date'],s['title'])):
  text=f'{s["author"]} ({s["date"]}) {s["title"]}. Available at: {s["url"]}.'
- text+=' (Accessed: 16 October 2026).'
 
  pp=p(text);pp.paragraph_format.space_after=Pt(7)
 pagebreak()
@@ -299,24 +298,9 @@ h('Workbook structure and reconciliation',2)
 p('Inputs contains the scenario assumptions; CAC_LTV and Churn link retention to discounted contribution; TCO reconciles category totals with annual cash flows; Sensitivity calculates four combinations and break-even prices. Charts contains linked Excel figures. Sources maps claims to documentation. Checks verifies arithmetic and model links, rather than the empirical validity of the assumptions.')
 h('Boundaries of risk adjustment',2)
 p('The 5% haircut applies to retained-account contribution and excludes exit risk already captured by churn. Platform-wide correlated losses are not modeled. If year-1 contribution requires surviving year-1 churn, five-year LTV falls to USD 15,299.56. Both conventions discount five end-year payments.')
-pagebreak()
-h('Appendix C | Procurement Scope & Submission Evidence')
-h('Procurement qualification',2)
-p('This case provides a five-year planning comparison, not a binding procurement quotation. All hardware, licensing, staffing, backup and migration costs are illustrative budgets. The standard Google price points provide market context; constant prices, staffing and seat counts through 2030 remain explicit modeling assumptions.')
-p('Before procurement, verify that the USD 12,000 annual allowance covers the required Exchange SE entitlement, Exchange Server and Client Access Licenses (CALs), underlying Windows Server licensing, and applicable Software Assurance (SA) or subscription eligibility. Establish the organization’s existing entitlements and obtain dated, like-for-like supplier or reseller quotations. Add any uncovered licensing and infrastructure costs to the model.')
-p('Technical due diligence should test mailbox and calendar migration fidelity, identity and permission mapping, backup restoration, continuity and data-governance requirements. Validate server sizing and resilience before accepting the two-server allowance. Compare a requirements-matched Exchange Online option with both modeled alternatives. No live tenant test or customer migration is claimed.')
-h('Submission evidence',2)
-p('The final submission must include the institution’s authentic VeriGuide receipt and completed Signed Declaration. The submitting student should review the analysis, calculations and citations and supply any required name, student ID and course information.')
-p('The supplied assignment brief specifies Blackboard submission by 16 October 2026, 17:00 HKT. Insert the required receipt and declaration in this appendix before exporting the final PDF.')
-table(['Required item','Status / student action'],[
- ('VeriGuide receipt','NOT INCLUDED. Complete the institutional check and insert the authentic receipt here.'),
- ('Signed Declaration','NOT INCLUDED. Complete and sign the official declaration; do not treat this page as the declaration.'),
- ],[5.3,12.6])
-p('References and appendices are excluded from the five-page body limit under the supplied assignment brief.')
-
 D.core_properties.title='From On-Premises Email to Cloud Platforms'
 D.core_properties.subject='Assignment 1: Strategy Analysis — illustrative Exchange SE and Google Workspace case'
-D.core_properties.author='Student review draft'
+D.core_properties.author=''
 D.core_properties.keywords='Exchange SE, Google Workspace, CAC, LTV, churn, TCO, illustrative assumptions'
 D.save(OUT/'assignment1_report.docx')
 (OUT/'assignment1_report.md').write_text('\n'.join(md),encoding='utf-8')

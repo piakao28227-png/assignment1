@@ -27,7 +27,7 @@ The present Workspace pricing page describes business email and a wider producti
 
 Part A evaluates platform mechanisms and industry structure. Part B1 takes the supplier’s perspective per enterprise account; B2 connects an integration scenario to churn and LTV; B3 takes the SME buyer’s perspective across 200 seats. Customer contribution is not the buyer’s cost saving.
 
-All commercial and behavioral model inputs are illustrative assumptions. Official documentation supports product and API descriptions, rather than estimates of vendor CAC, churn or market share. The TCO figures are planning budgets; Section B3 and Appendix C identify the entitlement, quotation and operational checks required before procurement.
+All commercial and behavioral model inputs are illustrative assumptions. Official documentation supports product and API descriptions, rather than estimates of vendor CAC, churn or market share. The TCO figures are planning budgets. Part B3 and Appendix A define the cost scope and licensing assumptions relevant to interpreting the comparison.
 
 
 ---
@@ -251,27 +251,27 @@ Google is the lower-cost baseline choice for this SME, conditional on successful
 
 ## References
 
-Google (2006) Get your people talking. Available at: https://googleblog.blogspot.com/2006/08/get-your-people-talking.html. (Accessed: 16 October 2026).
+Google (2006) Get your people talking. Available at: https://googleblog.blogspot.com/2006/08/get-your-people-talking.html.
 
-Google (2025) Google Workspace Marketplace. Available at: https://developers.google.com/workspace/marketplace. (Accessed: 16 October 2026).
+Google (2025) Google Workspace Marketplace. Available at: https://developers.google.com/workspace/marketplace.
 
-Google (2026a) Admin SDK Directory API: Python quickstart. Available at: https://developers.google.com/workspace/admin/directory/v1/quickstart/python. (Accessed: 16 October 2026).
+Google (2026a) Admin SDK Directory API: Python quickstart. Available at: https://developers.google.com/workspace/admin/directory/v1/quickstart/python.
 
-Google (2026b) Gmail API: Python quickstart. Available at: https://developers.google.com/workspace/gmail/api/quickstart/python. (Accessed: 16 October 2026).
+Google (2026b) Gmail API: Python quickstart. Available at: https://developers.google.com/workspace/gmail/api/quickstart/python.
 
-Google (2026c) Google Drive API: Python quickstart. Available at: https://developers.google.com/workspace/drive/api/quickstart/python. (Accessed: 16 October 2026).
+Google (2026c) Google Drive API: Python quickstart. Available at: https://developers.google.com/workspace/drive/api/quickstart/python.
 
-Google (n.d.) Google Workspace pricing. Available at: https://workspace.google.com/pricing.html. (Accessed: 16 October 2026).
+Google (n.d.) Google Workspace pricing. Available at: https://workspace.google.com/pricing.html.
 
-Microsoft (2025a) Exchange Online service description. Available at: https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description. (Accessed: 16 October 2026).
+Microsoft (2025a) Exchange Online service description. Available at: https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description.
 
-Microsoft (2025b) Exchange Server architecture. Available at: https://learn.microsoft.com/en-us/exchange/architecture/architecture?view=exchserver-2019. (Accessed: 16 October 2026).
+Microsoft (2025b) Exchange Server architecture. Available at: https://learn.microsoft.com/en-us/exchange/architecture/architecture?view=exchserver-2019.
 
-Microsoft (2025c) What is new in Exchange Server Subscription Edition (SE). Available at: https://learn.microsoft.com/en-us/exchange/new-features/new-features?view=exchserver-2019. (Accessed: 16 October 2026).
+Microsoft (2025c) What is new in Exchange Server Subscription Edition (SE). Available at: https://learn.microsoft.com/en-us/exchange/new-features/new-features?view=exchserver-2019.
 
-Microsoft (2026a) New-Mailbox (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-mailbox. (Accessed: 16 October 2026).
+Microsoft (2026a) New-Mailbox (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-mailbox.
 
-Microsoft (2026b) New-MigrationBatch (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-migrationbatch. (Accessed: 16 October 2026).
+Microsoft (2026b) New-MigrationBatch (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-migrationbatch.
 
 
 ---
@@ -376,29 +376,3 @@ Inputs contains the scenario assumptions; CAC_LTV and Churn link retention to di
 ### Boundaries of risk adjustment
 
 The 5% haircut applies to retained-account contribution and excludes exit risk already captured by churn. Platform-wide correlated losses are not modeled. If year-1 contribution requires surviving year-1 churn, five-year LTV falls to USD 15,299.56. Both conventions discount five end-year payments.
-
-
----
-
-## Appendix C | Procurement Scope & Submission Evidence
-
-### Procurement qualification
-
-This case provides a five-year planning comparison, not a binding procurement quotation. All hardware, licensing, staffing, backup and migration costs are illustrative budgets. The standard Google price points provide market context; constant prices, staffing and seat counts through 2030 remain explicit modeling assumptions.
-
-Before procurement, verify that the USD 12,000 annual allowance covers the required Exchange SE entitlement, Exchange Server and Client Access Licenses (CALs), underlying Windows Server licensing, and applicable Software Assurance (SA) or subscription eligibility. Establish the organization’s existing entitlements and obtain dated, like-for-like supplier or reseller quotations. Add any uncovered licensing and infrastructure costs to the model.
-
-Technical due diligence should test mailbox and calendar migration fidelity, identity and permission mapping, backup restoration, continuity and data-governance requirements. Validate server sizing and resilience before accepting the two-server allowance. Compare a requirements-matched Exchange Online option with both modeled alternatives. No live tenant test or customer migration is claimed.
-
-### Submission evidence
-
-The final submission must include the institution’s authentic VeriGuide receipt and completed Signed Declaration. The submitting student should review the analysis, calculations and citations and supply any required name, student ID and course information.
-
-The supplied assignment brief specifies Blackboard submission by 16 October 2026, 17:00 HKT. Insert the required receipt and declaration in this appendix before exporting the final PDF.
-
-| Required item | Status / student action |
-| --- | --- |
-| VeriGuide receipt | NOT INCLUDED. Complete the institutional check and insert the authentic receipt here. |
-| Signed Declaration | NOT INCLUDED. Complete and sign the official declaration; do not treat this page as the declaration. |
-
-References and appendices are excluded from the five-page body limit under the supplied assignment brief.
