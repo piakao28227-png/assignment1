@@ -7,116 +7,128 @@
     "url": "https://googleblog.blogspot.com/2006/08/get-your-people-talking.html",
     "supports": "Historical entry into hosted enterprise applications in 2006.",
     "status": "VERIFIED: original official announcement retrieved; dated 28 August 2006.",
-    "mirror": ""
+    "mirror": "",
+    "revision_date": "2006-08-28",
+    "date_basis": "Date displayed on the original announcement"
   },
   {
     "id": "G2",
     "author": "Google",
-    "date": "n.d.-a",
+    "date": "n.d.",
     "title": "Google Workspace pricing",
     "url": "https://workspace.google.com/pricing.html",
-    "supports": "Product/bundle and current plan/commitment checks only. USD 7 and 14 are scenario inputs, not verified quotes.",
+    "supports": "Current suite scope and annual-commitment price context; flat five-year USD 7/14 inputs remain illustrative assumptions.",
     "status": "VERIFIED: official pricing page retrieved. Annual-commitment standard USD 7/14 displayed, with separate promotions; five-year flat prices remain assumptions.",
-    "mirror": ""
+    "mirror": "",
+    "revision_date": null,
+    "date_basis": "No publication/revision date displayed"
   },
   {
     "id": "G3",
     "author": "Google",
-    "date": "n.d.-b",
+    "date": "2025",
     "title": "Google Workspace Marketplace",
     "url": "https://developers.google.com/workspace/marketplace",
     "supports": "Third-party app distribution and integration ecosystem; no installed-base or network-effect estimate.",
     "status": "VERIFIED: official Marketplace overview retrieved; third-party apps and add-on publishing documented.",
-    "mirror": ""
+    "mirror": "",
+    "revision_date": "2025-09-26",
+    "date_basis": "Displayed last-updated date"
   },
   {
     "id": "G4",
     "author": "Google",
-    "date": "n.d.-c",
+    "date": "2026b",
     "title": "Gmail API: Python quickstart",
     "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
     "supports": "OAuth scopes, credentials and Gmail label-list API in official sample.",
     "status": "VERIFIED: official developer page and official GitHub source both retrieved.",
-    "mirror": "https://raw.githubusercontent.com/googleworkspace/python-samples/main/gmail/quickstart/quickstart.py"
+    "mirror": "https://raw.githubusercontent.com/googleworkspace/python-samples/main/gmail/quickstart/quickstart.py",
+    "revision_date": "2026-10-12",
+    "date_basis": "Displayed last-updated date"
   },
   {
     "id": "G5",
     "author": "Google",
-    "date": "n.d.-d",
+    "date": "2026a",
     "title": "Admin SDK Directory API: Python quickstart",
     "url": "https://developers.google.com/workspace/admin/directory/v1/quickstart/python",
     "supports": "Directory user-list API, OAuth scope and credential dependency.",
     "status": "VERIFIED: official developer page and official GitHub source both retrieved.",
-    "mirror": "https://raw.githubusercontent.com/googleworkspace/python-samples/main/admin_sdk/directory/quickstart.py"
+    "mirror": "https://raw.githubusercontent.com/googleworkspace/python-samples/main/admin_sdk/directory/quickstart.py",
+    "revision_date": "2026-10-12",
+    "date_basis": "Displayed last-updated date"
   },
   {
     "id": "G6",
     "author": "Google",
-    "date": "n.d.-e",
+    "date": "2026c",
     "title": "Google Drive API: Python quickstart",
     "url": "https://developers.google.com/workspace/drive/api/quickstart/python",
     "supports": "Drive file metadata access through a scoped API; not proof of full-fidelity migration.",
     "status": "VERIFIED: official developer page and official GitHub source both retrieved.",
-    "mirror": "https://raw.githubusercontent.com/googleworkspace/python-samples/main/drive/quickstart/quickstart.py"
-  },
-  {
-    "id": "M1",
-    "author": "Microsoft",
-    "date": "n.d.-a",
-    "title": "Exchange Server licensing overview",
-    "url": "https://www.microsoft.com/en-us/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview",
-    "supports": "Licensing due diligence only. USD 12,000/year is an illustrative allowance, not a vendor quotation.",
-    "status": "PENDING: commercial page returned HTTP 403 after network restoration. SE entitlements and underlying Windows/CAL coverage need a current quote; no price or exact entitlement claim is used.",
-    "mirror": ""
+    "mirror": "https://raw.githubusercontent.com/googleworkspace/python-samples/main/drive/quickstart/quickstart.py",
+    "revision_date": "2026-10-12",
+    "date_basis": "Displayed last-updated date"
   },
   {
     "id": "M2",
     "author": "Microsoft",
-    "date": "n.d.-b",
+    "date": "2026a",
     "title": "New-Mailbox (ExchangePowerShell)",
     "url": "https://learn.microsoft.com/powershell/module/exchangepowershell/new-mailbox",
     "supports": "Official applicability lists both Exchange Server SE and Exchange Online; mailbox and user-account creation.",
-    "status": "VERIFIED: official MicrosoftDocs source retrieved; rendered Learn page not accessed.",
-    "mirror": "https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-Mailbox.md"
+    "status": "Official Microsoft Learn page and MicrosoftDocs source reviewed.",
+    "mirror": "https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-Mailbox.md",
+    "revision_date": "2026-05-16",
+    "date_basis": "Revision date in official page updated_at metadata"
   },
   {
     "id": "M3",
     "author": "Microsoft",
-    "date": "n.d.-c",
+    "date": "2026b",
     "title": "New-MigrationBatch (ExchangePowerShell)",
     "url": "https://learn.microsoft.com/powershell/module/exchangepowershell/new-migrationbatch",
     "supports": "Batched migration requests, endpoints and environment-specific parameters.",
-    "status": "VERIFIED: official MicrosoftDocs source retrieved; rendered Learn page not accessed.",
-    "mirror": "https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-MigrationBatch.md"
+    "status": "Official Microsoft Learn page and MicrosoftDocs source reviewed.",
+    "mirror": "https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-MigrationBatch.md",
+    "revision_date": "2026-05-28",
+    "date_basis": "Revision date in official page updated_at metadata"
   },
   {
     "id": "M4",
     "author": "Microsoft",
-    "date": "n.d.-d",
+    "date": "2025a",
     "title": "Exchange Online service description",
     "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description",
     "supports": "Exchange Online as the procurement comparator; current price/features not asserted.",
-    "status": "VERIFIED: official Learn service description retrieved. Commercial pricing page returned HTTP 403; no Exchange Online price is modeled.",
-    "mirror": ""
+    "status": "Official Microsoft Learn service description reviewed; Exchange Online price is outside the quantified scenario.",
+    "mirror": "",
+    "revision_date": "2025-12-09",
+    "date_basis": "Displayed last-updated date"
   },
   {
     "id": "M5",
     "author": "Microsoft",
-    "date": "n.d.-e",
+    "date": "2025b",
     "title": "Exchange Server architecture",
     "url": "https://learn.microsoft.com/en-us/exchange/architecture/architecture?view=exchserver-2019",
-    "supports": "Server-side architecture and deployment responsibilities; SE applicability requires checking.",
+    "supports": "Exchange Mailbox server architecture and administration; the page applies to Subscription Edition.",
     "status": "VERIFIED: official Learn architecture page retrieved; current page applies to Subscription Edition.",
-    "mirror": ""
+    "mirror": "",
+    "revision_date": "2025-04-02",
+    "date_basis": "Displayed last-updated date"
   },
   {
     "id": "M6",
     "author": "Microsoft",
-    "date": "n.d.-f",
+    "date": "2025c",
     "title": "What is new in Exchange Server Subscription Edition (SE)",
     "url": "https://learn.microsoft.com/en-us/exchange/new-features/new-features?view=exchserver-2019",
     "supports": "Current Exchange Server/SE product context; no retirement or release-date assertion is made.",
     "status": "VERIFIED: official Learn SE page retrieved; no retirement or release-date assertion used.",
-    "mirror": ""
+    "mirror": "",
+    "revision_date": "2025-06-16",
+    "date_basis": "Displayed last-updated date"
   }
 ]

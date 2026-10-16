@@ -4,13 +4,17 @@
 
 ## 文件
 
-- assignment1_report.docx：可编辑英文报告。
+- assignment1_report.docx：可编辑英文报告；求和、分式、上下标和指数均为原生 Word 数学公式。
 - assignment1_report.pdf：Word 导出的 PDF，共 9 页。第 1–5 页为 A4、双栏、单倍行距正文，第 6 页为参考文献，第 7–9 页为附录。正文 Arial 11 pt；表格与图注 10 pt。
 - assignment1_models.xlsx：9 张工作表，包含所有输入、CAC/LTV、Churn、TCO、四种敏感性组合、两个原生 Excel 图表、来源与核对项。蓝色输入可修改。
 - churn_chart / tco_chart：PNG、PDF、SVG 三种图表格式，均为初始基准情景的静态导出。
 - official_sources.md / sources.csv：英文官方来源、支持的具体论点、核验状态。
 - validation.json：分页、155 个公式独立重算、13 项基准核对及输入联动测试记录。
 - assignment1_report.md：报告文字版。
+
+## 引用与公式
+
+n.d. 是 no date（未注明日期）；同一机构同一年多份文献用 a/b/c 区分。已找到更新日期的来源改用实际年份。仅无日期的 Google 定价页保留 n.d.。完整日期依据见 sources.json、sources.csv 与工作簿 Sources 页。报告采用可编辑 OMML 数学公式，Markdown 文字版保留 LaTeX 公式。
 
 ## 主要口径
 
@@ -24,9 +28,9 @@ LTV 采用“当年贡献先发生、年末再流失”，现金在年末折现�
 
 所有商业、行为、风险与成本输入均标明 illustrative assumptions，未使用真实 CAC、流失率或客户数据。Google 网页的 USD 7/14 标准年承诺价已核对，但未来五年保持不变仍是假设。
 
-## 来源与尚待事项
+## 来源与采购边界
 
-Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。Microsoft 商业授权网页仍返回 HTTP 403，已记录；USD 12,000/年只是许可预算。采购级结论仍需核对当前 SE、Windows/CAL、SA/订阅权益与报价。
+Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。USD 12,000/年是许可规划预算。实际采购前应核对 SE、Exchange Server/CAL、Windows Server、SA/订阅权益、现有授权及可比报价；报告第 5 页和附录 C 已明确说明。
 
 ## 提交前本人完成
 

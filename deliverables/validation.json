@@ -23,6 +23,18 @@
     "google_savings": -27000
   },
   "official_source_pages_verified": 11,
-  "pending_source": "M1: Microsoft commercial licensing overview returned HTTP 403; no licensing price or exact entitlement claim used",
-  "submission_status": "Not submitted; student VeriGuide receipt and official Signed Declaration not included"
+  "procurement_qualification": "Annual licensing is an illustrative budget; validate existing and required SE, Windows/CAL and SA/subscription entitlements and obtain current quotations before procurement",
+  "submission_status": "Not submitted; student VeriGuide receipt and official Signed Declaration not included",
+  "native_word_equations": 41,
+  "native_fractions": 8,
+  "native_superscripts": 15,
+  "native_summations": 3,
+  "editorial_checks": {
+    "operational_access_errors_in_report": 0,
+    "ascii_exponent_formulas_in_report": 0,
+    "procurement_scope_pages": [
+      5,
+      9
+    ]
+  }
 }

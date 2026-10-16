@@ -1,20 +1,21 @@
 from pathlib import Path
-import json,hashlib,shutil,zipfile
+import json,hashlib,shutil,zipfile,re
+from lxml import etree
 from openpyxl import load_workbook
 import fitz
 ROOT=Path('/workspace/assignment1');OUT=ROOT/'deliverables';R=Path('/workspace/assignment1-render')
 shutil.copy2(R/'assignment1_report.pdf',OUT/'assignment1_report.pdf')
 sources=json.loads((OUT/'sources.json').read_text())
-lines=['# Official sources and claim mapping','','Audit date: 16 October 2026. Harvard author–date format. All commercial, cost, risk, workforce and behavioral parameters are illustrative assumptions or explicit derivations. Sources verify only the claims identified below.','']
+lines=['# Official sources and claim mapping','','Source review date: 16 October 2026. Harvard author–date format; dates use displayed revisions or official revision metadata. Same-author/same-year letters follow title order; n.d. is retained only for an undated page. All commercial, cost, risk, workforce and behavioral parameters are illustrative assumptions or explicit derivations. Sources verify only the claims identified below.','']
 evidence=[]
 keys={'G1':'google2006.html','G2':'pricing.html','G3':'marketplace.html','G4':'gmail_page.html','G5':'directory_page.html','G6':'drive_page.html','M2':'ms_mailbox.txt','M3':'ms_migration.txt','M4':'online_description.html','M5':'architecture.html','M6':'exchangeSE.html'}
 for s in sources:
- lines.extend([f'## {s["id"]} — {s["author"]} ({s["date"]})','',s['title']+'.','',f'Official source: {s["url"]}','',f'Supported use: {s["supports"]}','',f'Access audit: {s["status"]}',''])
+ lines.extend([f'## {s["id"]} — {s["author"]} ({s["date"]})','',s['title']+'.','',f'Official source: {s["url"]}','',f'Supported use: {s["supports"]}','',f'Review record: {s["status"]}','',f'Citation date basis: {s.get("revision_date") or "Undated"} — {s["date_basis"]}',''])
  if s['mirror']:lines.extend([f'Official documentation/sample source: {s["mirror"]}',''])
  if s['id'] in keys:
   p=Path('/workspace/assignment1-research')/keys[s['id']]
   if p.exists():evidence.append({'source_id':s['id'],'retrieved_file':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'audit_date':'2026-10-16'})
-lines.extend(['## Interpretation limits','','The Google page displays standard annual-commitment USD 7 and USD 14 levels alongside promotions and differing features. The five-year model assumes flat prices and excludes promotional discounts. No five-year guaranteed quote was obtained.','','The Microsoft commercial licensing overview returned HTTP 403. No exact licensing entitlement or price is claimed. The USD 12,000 annual allowance requires current SE, Windows/CAL and subscription/Software Assurance due diligence before procurement.','','Quickstarts were inspected as documentation only. No live tenant, credentials, customer migration or API endpoint was tested. No observed vendor CAC, churn, market-share or financial dataset was used.'])
+lines.extend(['## Interpretation limits','','The Google page displays standard annual-commitment USD 7 and USD 14 levels alongside promotions and differing features. The five-year model assumes flat prices and excludes promotional discounts. No five-year guaranteed quote was obtained.','','The USD 12,000 annual licensing allowance is a planning assumption. Procurement requires current SE, Exchange Server/CAL and Windows Server entitlements, applicable Software Assurance or subscription eligibility, and comparable dated quotations.','','Quickstarts were inspected as documentation only. No live tenant, credentials, customer migration or API endpoint was tested. No observed vendor CAC, churn, market-share or financial dataset was used.'])
 (OUT/'official_sources.md').write_text('\n'.join(lines),encoding='utf-8')
 (OUT/'source_access_evidence.json').write_text(json.dumps(evidence,indent=2))
 pdf=fitz.open(OUT/'assignment1_report.pdf')
@@ -40,7 +41,19 @@ w=load_workbook(R/'scenario-output/assignment1_models.xlsx',data_only=True)
 scenario={'inputs':{'n':8,'google_price':14,'exchange_fte':.15},'ltv':w['CAC_LTV']['B8'].value,'exchange_tco':w['TCO']['B12'].value,'google_tco':w['TCO']['C12'].value,'google_savings':w['TCO']['B14'].value}
 assert abs(scenario['ltv']-18678.042437064752)<.0001
 assert scenario['exchange_tco']==221000 and scenario['google_tco']==248000 and scenario['google_savings']==-27000
-v={'pdf_pages':9,'body_pages':5,'reference_pages':1,'appendix_pages':3,'page_size':'A4','body_columns':2,'body_font':'Arial 11 pt; tables/captions 10 pt','formula_cells':count,'independently_recalculated_baseline_checks_passed':13,'cached_vs_recalculated_differences':len(diffs),'formula_errors':0,'native_excel_charts':2,'input_propagation_check':scenario,'official_source_pages_verified':len(evidence),'pending_source':'M1: Microsoft commercial licensing overview returned HTTP 403; no licensing price or exact entitlement claim used','submission_status':'Not submitted; student VeriGuide receipt and official Signed Declaration not included'}
+v={'pdf_pages':9,'body_pages':5,'reference_pages':1,'appendix_pages':3,'page_size':'A4','body_columns':2,'body_font':'Arial 11 pt; tables/captions 10 pt','formula_cells':count,'independently_recalculated_baseline_checks_passed':13,'cached_vs_recalculated_differences':len(diffs),'formula_errors':0,'native_excel_charts':2,'input_propagation_check':scenario,'official_source_pages_verified':len(evidence),'procurement_qualification':'Annual licensing is an illustrative budget; validate existing and required SE, Windows/CAL and SA/subscription entitlements and obtain current quotations before procurement','submission_status':'Not submitted; student VeriGuide receipt and official Signed Declaration not included'}
+with zipfile.ZipFile(OUT/'assignment1_report.docx') as z:
+ docxml=etree.fromstring(z.read('word/document.xml'))
+ns={'m':'http://schemas.openxmlformats.org/officeDocument/2006/math','w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+v['native_word_equations']=len(docxml.findall('.//m:oMath',ns))
+v['native_fractions']=len(docxml.findall('.//m:f',ns))
+v['native_superscripts']=len(docxml.findall('.//m:sSup',ns))
+v['native_summations']=len(docxml.findall('.//m:nary',ns))
+assert v['native_word_equations']>=40 and v['native_fractions']>=8 and v['native_summations']>=3
+reporttext=' '.join(p.get_text() for p in pdf)
+assert not re.search(r'\b403\b|\bHTTP\b|egress|allowlist|network policy',reporttext,re.I)
+assert not re.search(r'n\.d\.-[a-z]|exp\(|\^\(',reporttext)
+v['editorial_checks']={'operational_access_errors_in_report':0,'ascii_exponent_formulas_in_report':0,'procurement_scope_pages':[5,9]}
 (OUT/'validation.json').write_text(json.dumps(v,indent=2))
 readme='''# Assignment 1 交付说明
 
@@ -48,13 +61,17 @@ readme='''# Assignment 1 交付说明
 
 ## 文件
 
-- assignment1_report.docx：可编辑英文报告。
+- assignment1_report.docx：可编辑英文报告；求和、分式、上下标和指数均为原生 Word 数学公式。
 - assignment1_report.pdf：Word 导出的 PDF，共 9 页。第 1–5 页为 A4、双栏、单倍行距正文，第 6 页为参考文献，第 7–9 页为附录。正文 Arial 11 pt；表格与图注 10 pt。
 - assignment1_models.xlsx：9 张工作表，包含所有输入、CAC/LTV、Churn、TCO、四种敏感性组合、两个原生 Excel 图表、来源与核对项。蓝色输入可修改。
 - churn_chart / tco_chart：PNG、PDF、SVG 三种图表格式，均为初始基准情景的静态导出。
 - official_sources.md / sources.csv：英文官方来源、支持的具体论点、核验状态。
 - validation.json：分页、155 个公式独立重算、13 项基准核对及输入联动测试记录。
 - assignment1_report.md：报告文字版。
+
+## 引用与公式
+
+n.d. 是 no date（未注明日期）；同一机构同一年多份文献用 a/b/c 区分。已找到更新日期的来源改用实际年份。仅无日期的 Google 定价页保留 n.d.。完整日期依据见 sources.json、sources.csv 与工作簿 Sources 页。报告采用可编辑 OMML 数学公式，Markdown 文字版保留 LaTeX 公式。
 
 ## 主要口径
 
@@ -68,9 +85,9 @@ LTV 采用“当年贡献先发生、年末再流失”，现金在年末折现�
 
 所有商业、行为、风险与成本输入均标明 illustrative assumptions，未使用真实 CAC、流失率或客户数据。Google 网页的 USD 7/14 标准年承诺价已核对，但未来五年保持不变仍是假设。
 
-## 来源与尚待事项
+## 来源与采购边界
 
-Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。Microsoft 商业授权网页仍返回 HTTP 403，已记录；USD 12,000/年只是许可预算。采购级结论仍需核对当前 SE、Windows/CAL、SA/订阅权益与报价。
+Google 定价、2006 年原公告、Marketplace 和 API 指南，以及 Microsoft Learn 的 Exchange SE、架构、Exchange Online 等来源已核验。USD 12,000/年是许可规划预算。实际采购前应核对 SE、Exchange Server/CAL、Windows Server、SA/订阅权益、现有授权及可比报价；报告第 5 页和附录 C 已明确说明。
 
 ## 提交前本人完成
 
@@ -91,6 +108,7 @@ Excel 编辑后需重新计算。Checks 的基准常数核对会提示合法输�
 with zipfile.ZipFile(OUT/'assignment1_package.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
  for p in sorted(OUT.iterdir()):
   if p.is_file() and p.suffix!='.zip':z.write(p,'assignment1/'+p.name)
- for p in sorted((ROOT/'tools').glob('*.py')):z.write(p,'assignment1/tools/'+p.name)
+ for p in sorted((ROOT/'tools').iterdir()):
+  if p.suffix in ['.py','.json']:z.write(p,'assignment1/tools/'+p.name)
 print(json.dumps(v,indent=2))
 print('Bundle:',OUT/'assignment1_package.zip')

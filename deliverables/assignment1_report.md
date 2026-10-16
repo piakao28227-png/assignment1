@@ -17,17 +17,17 @@ Shortlist Google Workspace for this cost-sensitive case, while obtaining a like-
 
 ## Case Background
 
-The incumbent model places messaging infrastructure under the customer’s operational control. Exchange Mailbox servers store and process mailbox data, with administration through the Exchange admin center and Exchange Management Shell (Microsoft, n.d.-e). For the forward-looking 2026–2030 comparison, the on-premises option is Exchange SE, rather than an assumed deployment of an older server edition (Microsoft, n.d.-f).
+The incumbent model places messaging infrastructure under the customer’s operational control. Exchange Mailbox servers store and process mailbox data, with administration through the Exchange admin center and Exchange Management Shell (Microsoft, 2025b). For the forward-looking 2026–2030 comparison, the on-premises option is Exchange SE, rather than an assumed deployment of an older server edition (Microsoft, 2025c).
 
 Google entered hosted organizational applications in 2006. Its 28 August announcement introduced Google Apps for Your Domain, combining Gmail, Google Talk, Google Calendar and Google Page Creator without customer-installed hardware or software (Google, 2006). This earlier offering provides the historical entry point; the modern comparison uses Google Workspace, not the 2006 bundle.
 
-The present Workspace pricing page describes business email and a wider productivity suite, with differentiated storage, meeting and management capabilities (Google, n.d.-a). Exchange SE primarily anchors this case’s messaging workload. The analysis therefore compares ways to meet a defined SME communications need, rather than asserting that the products contain identical features.
+The present Workspace pricing page describes business email and a wider productivity suite, with differentiated storage, meeting and management capabilities (Google, n.d.). Exchange SE primarily anchors this case’s messaging workload. The analysis therefore compares ways to meet a defined SME communications need, rather than asserting that the products contain identical features.
 
 ### Scope and evidence
 
 Part A evaluates platform mechanisms and industry structure. Part B1 takes the supplier’s perspective per enterprise account; B2 connects an integration scenario to churn and LTV; B3 takes the SME buyer’s perspective across 200 seats. Customer contribution is not the buyer’s cost saving.
 
-All commercial and behavioral model inputs are explicitly illustrative assumptions. Official documentation supports product and API descriptions; it does not establish actual vendor CAC, churn or market share. Current product pages were checked on 16 October 2026. The Microsoft commercial licensing page still returned HTTP 403; no exact licensing entitlement or price is claimed (Appendix C).
+All commercial and behavioral model inputs are illustrative assumptions. Official documentation supports product and API descriptions, rather than estimates of vendor CAC, churn or market share. The TCO figures are planning budgets; Section B3 and Appendix C identify the entitlement, quotation and operational checks required before procurement.
 
 
 ---
@@ -38,15 +38,15 @@ All commercial and behavioral model inputs are explicitly illustrative assumptio
 
 A user ecosystem can create direct coordination value: adoption by colleagues and business partners may make shared calendars, permissions and collaboration easier. However, email interoperability limits the need for external correspondents to use the same supplier. A larger email subscriber count alone is insufficient evidence of a strong proprietary network effect.
 
-Product complementarity is distinct. Email, storage, documents and meetings may be more convenient together than separately; this is an economy of scope or bundle benefit even if the number of users is unchanged. Workspace’s documented bundle illustrates the complement set, but does not measure the incremental value of each component (Google, n.d.-a).
+Product complementarity is distinct. Email, storage, documents and meetings may be more convenient together than separately; this is an economy of scope or bundle benefit even if the number of users is unchanged. Workspace’s documented bundle illustrates the complement set, but does not measure the incremental value of each component (Google, n.d.).
 
-Third-party applications can generate an indirect network effect: more relevant customers attract developers; more useful integrations can then attract customers. Google documents third-party application discovery and installation through Workspace Marketplace (Google, n.d.-b). This establishes a platform channel, not proof of a self-reinforcing growth rate. Microsoft also exposes management and migration capabilities across SE and Exchange Online (Microsoft, n.d.-b; n.d.-c).
+Third-party applications can generate an indirect network effect: more relevant customers attract developers; more useful integrations can then attract customers. Google documents third-party application discovery and installation through Workspace Marketplace (Google, 2025). This establishes a platform channel, not proof of a self-reinforcing growth rate. Microsoft also exposes management and migration capabilities across SE and Exchange Online (Microsoft, 2026a, 2026b).
 
 Spreading datacenter, engineering or support expenditure over more customers is a supply-side scale economy. It can lower average cost without raising any individual customer’s utility through other users. It should not be counted again as a demand-side network effect.
 
 ### Bidirectional switching costs
 
-Leaving Exchange can require mailbox and calendar conversion, permission mapping, identity redesign, application rewrites and staff retraining. Leaving Workspace can similarly require document conversion, sharing-rule reconstruction, OAuth reauthorization and replacement of cloud workflows. Migration commands and API credentials provide concrete reasons for these tasks, but do not quantify their cost (Google, n.d.-c; n.d.-d; n.d.-e; Microsoft, n.d.-c).
+Leaving Exchange can require mailbox and calendar conversion, permission mapping, identity redesign, application rewrites and staff retraining. Leaving Workspace can similarly require document conversion, sharing-rule reconstruction, OAuth reauthorization and replacement of cloud workflows. Migration commands and API credentials provide concrete reasons for these tasks, but do not quantify their cost (Google, 2026a, 2026b, 2026c; Microsoft, 2026b).
 
 
 <!-- column break -->
@@ -65,7 +65,7 @@ These are directional analytical judgments, not empirical force scores or market
 
 ### The incumbent can also adapt
 
-Microsoft Exchange Online is itself a hosted messaging service, integrated with Microsoft Entra ID (Microsoft, n.d.-d). Its presence prevents a simple “Google cloud versus Microsoft servers” conclusion. An SME with existing Microsoft skills or workflows may prefer Microsoft’s cloud route and avoid part of the cross-vendor conversion burden.
+Microsoft Exchange Online is itself a hosted messaging service, integrated with Microsoft Entra ID (Microsoft, 2025a). Its presence prevents a simple “Google cloud versus Microsoft servers” conclusion. An SME with existing Microsoft skills or workflows may prefer Microsoft’s cloud route and avoid part of the cross-vendor conversion burden.
 
 APIs have two effects. Proprietary workflows and permissions can increase rebuilding effort, but documented interfaces and open standards can support extraction and portability. The strategic recommendation is to evaluate workflow depth and exit feasibility together, rather than treating every integration as permanent lock-in.
 
@@ -76,9 +76,15 @@ APIs have two effects. Proprietary workflows and permissions can increase rebuil
 
 ### An explicit cross-subsidy scenario
 
-Assume each supplier acquires 10 enterprise accounts. Exchange incurs USD 70,000 in acquisition spending, giving CAC = 70,000 / 10 = USD 7,000. For Google, assume the same USD 70,000 gross campaign is partly funded by an illustrative USD 30,000 credit from adjacent offerings. Net cost allocated to the focal product is USD 40,000, so net allocated CAC = USD 4,000.
+Assume each supplier acquires 10 enterprise accounts. Let $A_j$ be acquisition spending allocated to supplier $j$ and $N_j$ the number of acquired accounts.
 
-This demonstrates how a diversified entrant could fund acquisition while charging less of the expense to one product. The credit is invented for the exercise; it is not evidence of a Google accounting practice or advertising subsidy. Reusing distribution might also reduce gross acquisition expense, but that separate efficiency is not estimated here.
+$$
+\mathrm{CAC}_j=\frac{A_j}{N_j}
+$$
+
+Exchange allocates USD 70,000, giving $\mathrm{CAC}_{\mathrm{E}}=\frac{70{,}000}{10}=7{,}000$. For Google, assume a USD 70,000 gross campaign and a USD 30,000 ecosystem funding credit. Net allocated spending is USD 40,000, giving $\mathrm{CAC}_{\mathrm{G}}=\frac{40{,}000}{10}=4{,}000$ per account.
+
+The illustrative credit shows how a diversified entrant could fund acquisition from adjacent offerings while assigning less expense to one product. It is a scenario assumption, rather than evidence of a Google accounting practice or advertising subsidy. Any reduction in gross acquisition expense through shared distribution would be a separate efficiency.
 
 A funding transfer does not remove real resource use: Google’s gross ecosystem acquisition cost remains USD 7,000 per account in this scenario. Therefore 4.35 is a ratio to net allocated CAC; on a common gross-cost basis both suppliers have a ratio of 2.49. Any claim of superior economic efficiency would need actual incremental cost evidence.
 
@@ -86,16 +92,26 @@ A funding transfer does not remove real resource use: Google’s gross ecosystem
 
 Normalize annual contribution gross profit to USD 6,000 per active enterprise account for both suppliers. Apply a 5% expected operating-risk loss to contribution and a 10% annual discount rate. The loss haircut is distinct from churn and is applied once to each year’s contribution; it is not an extra customer-exit probability.
 
-Use the unrounded B2 baseline c = 0.18 × exp(−0.10 × 4) = 0.1206576083. Equal churn and contribution isolate the assumed CAC difference. Acquisition expense is excluded from LTV because CAC appears separately in the ratio.
+Use the unrounded B2 baseline:
+
+$$
+c(4)=0.18\,\mathrm{e}^{-0.4}\approx0.1206576083.
+$$
+
+Equal churn and contribution isolate the assumed CAC difference. Acquisition expense is excluded from LTV because CAC appears separately in the ratio.
 
 
 <!-- column break -->
 
 ### Timing, formula and result
 
-A customer present at the start of a year earns that year’s contribution; churn occurs at year-end. Contributions are received and discounted at year-end. For t = 1,…,5, the probability of earning a contribution is (1 − c)^(t − 1). No terminal value or new customers are added.
+A customer active at the start of a year earns that year’s contribution; churn occurs at year-end. Cash is received and discounted at year-end. Hence contribution eligibility in year $t$ is $(1-c)^{t-1}$. There is no terminal value or addition of new accounts.
 
-LTV₅ = Σ[t=1,…,5] {6,000 × (1 − 0.05) × (1 − c)^(t − 1) / (1 + 0.10)^t}.
+$$
+\mathrm{LTV}_5=\sum_{t=1}^{5}\frac{g(1-\ell)(1-c)^{t-1}}{(1+r)^t}
+$$
+
+Here $g=6{,}000$ is annual contribution in USD, $\ell=0.05$ is the operating-loss fraction and $r=0.10$ is the discount rate. With baseline $c=c(4)$, $\mathrm{LTV}_5=17{,}398.87$ USD.
 
 | Calendar year | Start-year survival | PV contribution (USD) |
 | --- | --- | --- |
@@ -127,9 +143,21 @@ If churn instead occurs before each year’s contribution, including year 1, mul
 
 Define n as the count of active, material API/workflow integrations per enterprise account. The five values are alternative configurations, not observations across time. Hold n and annual churn constant within each configuration during 2026–2030. An integration must represent a meaningful dependency; merely enabling an API does not create the assumed effect.
 
-Annual churn is c(n) = 0.18 × exp(−0.10n). The baseline 0.18 and decay coefficient 0.10 are illustrative, not statistically fitted. Each additional integration multiplies churn by exp(−0.10) ≈ 0.9048, a 9.52% proportional reduction under this assumption.
+Annual churn follows the illustrative exponential function
 
-For a customer present at opening-2026, end-2030 retention is S₅(n) = [1 − c(n)]^5. This assumes independent annual exits, no re-entry and a stable customer cohort. End-horizon retention uses exponent 5; B1 contribution eligibility uses t − 1 because of its cash-flow timing.
+$$
+c(n)=c_0\mathrm{e}^{-\beta n}=0.18\,\mathrm{e}^{-0.10n}.
+$$
+
+The baseline $c_0=0.18$ and coefficient $\beta=0.10$ are assumed, not statistically fitted. Each additional integration multiplies churn by $\mathrm{e}^{-0.10}\approx0.9048$, a 9.52% proportional reduction under this model.
+
+For an account present at opening-2026, the probability of retention at end-2030 is
+
+$$
+S_5(n)=\left[1-c(n)\right]^5.
+$$
+
+Annual exits are independent, with no re-entry and fixed $n$ within a scenario. End-horizon retention uses exponent 5; B1 contribution eligibility uses $t-1$ because contribution precedes year-end churn.
 
 | n | Annual churn | End-2030 retention |
 | --- | --- | --- |
@@ -152,7 +180,7 @@ Figure 1. Modeled annual churn by integration count; illustrative 2026–2030 co
 
 ### Why APIs can lock in and open up
 
-Google’s official quickstarts show OAuth scopes and credentials for Gmail, Directory user administration and Drive metadata access (Google, n.d.-c; n.d.-d; n.d.-e). Recreating permissions, service identities and business logic on another platform can be costly. These concrete dependencies motivate the model’s proposed mechanism; API documentation does not establish the coefficient.
+Google’s official quickstarts show OAuth scopes and credentials for Gmail, Directory user administration and Drive metadata access (Google, 2026a, 2026b, 2026c). Recreating permissions, service identities and business logic on another platform can be costly. These concrete dependencies motivate the model’s proposed mechanism; API documentation does not establish the coefficient.
 
 The same interfaces can reduce manual extraction and reconciliation work. Portable formats and supported standards can make switching easier, while platform-specific permissions, histories and automation can remain difficult to reproduce. A functioning metadata-list sample is not proof of full-fidelity data export or a tested migration.
 
@@ -181,11 +209,21 @@ Use nominal USD cash costs for 200 employees over 2026–2030. One-off payments 
 | Backup / security, yearly | 5,000 | 5,000 |
 | Five-year total | 281,000 | 164,000 |
 
-Exchange: 32,000 + 9,000 + 5 × (12,000 + 24,000 + 7,000 + 5,000) = USD 281,000. Google: 15,000 + 5 × (200 × 7 × 12 + 8,000 + 5,000) = USD 164,000. Savings = USD 117,000 / 281,000 = 41.6%.
+Applying $\mathrm{TCO}=C_0+\sum_{t=1}^{5}C_t$, the nominal totals in USD are
 
-USD 7 and USD 14 are illustrative flat subscription scenarios across five years. The retrieved Google page displays standard annual-commitment price points at these levels, alongside promotions and differentiated plans (Google, n.d.-a); it does not guarantee the modeled five-year rates. All hardware, licensing and labor amounts remain assumptions, not official quotations.
+$$
+\mathrm{TCO}_{\mathrm{E}}=41{,}000+5(48{,}000)=281{,}000,
+$$
 
-Common endpoints and internet access are excluded equally. The USD 7,000 is incremental on-premises infrastructure overhead. Existing directory/DNS capacity is assumed reusable. Two servers are a budget input, not a validated resilient design; licensing/SA and underlying OS/CAL coverage require a current quote (Microsoft, n.d.-a; n.d.-e).
+$$
+\mathrm{TCO}_{\mathrm{G}}=15{,}000+5(29{,}800)=164{,}000.
+$$
+
+Google saves USD 117,000; the proportional reduction is $\frac{117{,}000}{281{,}000}\times100\%=41.6\%$.
+
+USD 7 and USD 14 are illustrative flat subscription scenarios across five years. The retrieved Google page displays standard annual-commitment price points at these levels, alongside promotions and differentiated plans (Google, n.d.); it does not guarantee the modeled five-year rates. All hardware, licensing and labor amounts remain assumptions, not official quotations.
+
+Common endpoints and internet are excluded equally; USD 7,000 represents incremental on-premises overhead. Existing directory/DNS capacity is assumed reusable. The two-server allowance is not a validated resilient design (Microsoft, 2025b). Before procurement, confirm Exchange SE, Exchange Server/CAL and Windows Server licensing, SA or subscription eligibility, and current like-for-like quotations. The USD 12,000 annual license allowance is a planning assumption.
 
 
 <!-- column break -->
@@ -196,7 +234,7 @@ Figure 2. Five-year nominal TCO, 200 users, 2026–2030. Baseline: Google USD 7/
 
 ### Sensitivity: when the ranking reverses
 
-USD 24,000 / 0.30 implies USD 80,000 per loaded FTE-year. At 0.15 FTE, Exchange administration falls to USD 12,000/year and TCO to USD 221,000. Raising Google’s price to USD 14 increases its TCO to USD 248,000.
+The implied loaded annual FTE cost is $\frac{24{,}000}{0.30}=80{,}000$ USD. At 0.15 FTE, Exchange administration falls to USD 12,000/year and TCO to USD 221,000. Raising Google’s price to USD 14 increases its TCO to USD 248,000.
 
 | Google price / Exchange FTE | Google savings (USD) |
 | --- | --- |
@@ -213,31 +251,27 @@ Google is the lower-cost baseline choice for this SME, conditional on successful
 
 ## References
 
-Harvard author–date format. Official pages accessed 16 October 2026 except the explicitly marked licensing page. Sources.csv and the workbook map each source to its supported claim. Model inputs are illustrative assumptions supplied in the case or transparently derived; no observational dataset is used.
-
 Google (2006) Get your people talking. Available at: https://googleblog.blogspot.com/2006/08/get-your-people-talking.html. (Accessed: 16 October 2026).
 
-Google (n.d.-a) Google Workspace pricing. Available at: https://workspace.google.com/pricing.html. (Accessed: 16 October 2026).
+Google (2025) Google Workspace Marketplace. Available at: https://developers.google.com/workspace/marketplace. (Accessed: 16 October 2026).
 
-Google (n.d.-b) Google Workspace Marketplace. Available at: https://developers.google.com/workspace/marketplace. (Accessed: 16 October 2026).
+Google (2026a) Admin SDK Directory API: Python quickstart. Available at: https://developers.google.com/workspace/admin/directory/v1/quickstart/python. (Accessed: 16 October 2026).
 
-Google (n.d.-c) Gmail API: Python quickstart. Available at: https://developers.google.com/workspace/gmail/api/quickstart/python. (Accessed: 16 October 2026).
+Google (2026b) Gmail API: Python quickstart. Available at: https://developers.google.com/workspace/gmail/api/quickstart/python. (Accessed: 16 October 2026).
 
-Google (n.d.-d) Admin SDK Directory API: Python quickstart. Available at: https://developers.google.com/workspace/admin/directory/v1/quickstart/python. (Accessed: 16 October 2026).
+Google (2026c) Google Drive API: Python quickstart. Available at: https://developers.google.com/workspace/drive/api/quickstart/python. (Accessed: 16 October 2026).
 
-Google (n.d.-e) Google Drive API: Python quickstart. Available at: https://developers.google.com/workspace/drive/api/quickstart/python. (Accessed: 16 October 2026).
+Google (n.d.) Google Workspace pricing. Available at: https://workspace.google.com/pricing.html. (Accessed: 16 October 2026).
 
-Microsoft (n.d.-a) Exchange Server licensing overview. Available at: https://www.microsoft.com/en-us/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview. [Access not completed: HTTP 403 on 16 October 2026; listed for licensing due diligence, not evidence of a quoted price.]
+Microsoft (2025a) Exchange Online service description. Available at: https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description. (Accessed: 16 October 2026).
 
-Microsoft (n.d.-b) New-Mailbox (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-mailbox. (Accessed: 16 October 2026). Official documentation source also checked: https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-Mailbox.md.
+Microsoft (2025b) Exchange Server architecture. Available at: https://learn.microsoft.com/en-us/exchange/architecture/architecture?view=exchserver-2019. (Accessed: 16 October 2026).
 
-Microsoft (n.d.-c) New-MigrationBatch (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-migrationbatch. (Accessed: 16 October 2026). Official documentation source also checked: https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-MigrationBatch.md.
+Microsoft (2025c) What is new in Exchange Server Subscription Edition (SE). Available at: https://learn.microsoft.com/en-us/exchange/new-features/new-features?view=exchserver-2019. (Accessed: 16 October 2026).
 
-Microsoft (n.d.-d) Exchange Online service description. Available at: https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description. (Accessed: 16 October 2026).
+Microsoft (2026a) New-Mailbox (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-mailbox. (Accessed: 16 October 2026).
 
-Microsoft (n.d.-e) Exchange Server architecture. Available at: https://learn.microsoft.com/en-us/exchange/architecture/architecture?view=exchserver-2019. (Accessed: 16 October 2026).
-
-Microsoft (n.d.-f) What is new in Exchange Server Subscription Edition (SE). Available at: https://learn.microsoft.com/en-us/exchange/new-features/new-features?view=exchserver-2019. (Accessed: 16 October 2026).
+Microsoft (2026b) New-MigrationBatch (ExchangePowerShell). Available at: https://learn.microsoft.com/powershell/module/exchangepowershell/new-migrationbatch. (Accessed: 16 October 2026).
 
 
 ---
@@ -280,7 +314,25 @@ The baseline is a planning comparison of messaging-centered communications, not 
 
 ### B1–B2 expansion and time convention
 
-At n = 4: c = 0.18 × exp(−0.4) = 0.1206576083. Risk-adjusted annual contribution before survival weighting is USD 6,000 × 0.95 = USD 5,700. The year-t contribution is 5,700 × (1 − c)^(t − 1); its present value divides by 1.10^t. Summing five years gives USD 17,398.8669. Five-year end retention = (1 − c)^5 = 0.5257630384. No rounding occurs before final presentation.
+At the baseline $n=4$, calculations retain unrounded values:
+
+$$
+c(4)=0.18\,\mathrm{e}^{-0.4}=0.1206576083\ldots
+$$
+
+$$
+g(1-\ell)=6{,}000(1-0.05)=5{,}700\quad\text{USD/year}.
+$$
+
+For an account active at opening-2026, the present value of year-$t$ contribution and the resulting five-year total are
+
+$$
+\mathrm{PV}_t=\frac{5{,}700(1-c)^{t-1}}{1.10^t},\qquad \mathrm{LTV}_5=\sum_{t=1}^{5}\mathrm{PV}_t=17{,}398.8669\ldots
+$$
+
+$$
+S_5(4)=(1-c)^5=0.5257630384\ldots
+$$
 
 | n | Annual churn | End-2030 retention | LTV, USD |
 | --- | --- | --- | --- |
@@ -299,40 +351,54 @@ At n = 4: c = 0.18 × exp(−0.4) = 0.1206576083. Risk-adjusted annual contribut
 | 14 | 0.30 | 281,000 | 248,000 | 33,000 |
 | 14 | 0.15 | 221,000 | 248,000 | -27,000 |
 
-For staffing f, Exchange TCO E(f) = 41,000 + 5 × (12,000 + 80,000f + 7,000 + 5,000). Google TCO G(p) = 15,000 + 5 × (2,400p + 8,000 + 5,000). Set E(f) = G(p): p* = [E(f) − 15,000 − 5 × 13,000] / 12,000. Thus p* = USD 16.75 at f = 0.30 and USD 11.75 at f = 0.15.
+Let $f$ denote Exchange staffing in FTE and $p$ the Google subscription price in USD/user/month. Holding other inputs fixed gives
+
+$$
+E(f)=41{,}000+5\left(12{,}000+80{,}000f+7{,}000+5{,}000\right),
+$$
+
+$$
+G(p)=15{,}000+5\left(2{,}400p+8{,}000+5{,}000\right).
+$$
+
+Set $E(f)=G(p)$ and solve for the break-even subscription price:
+
+$$
+p^{*}(f)=\frac{E(f)-15{,}000-5(13{,}000)}{12{,}000}.
+$$
+
+Thus $p^{*}(0.30)=16.75$ and $p^{*}(0.15)=11.75$, in USD/user/month.
 
 ### Workbook structure and reconciliation
 
-Inputs holds the scenario assumptions; CAC_LTV calculates acquisition allocations, linked churn and year-by-year present values; Churn calculates five configurations and LTV links; TCO reconciles category totals to annual cash schedules; Sensitivity calculates four combinations and break-even rates. Charts contains native linked Excel charts; Sources documents claim support and access status. Checks tests baseline identities, the B1–B2 link and the ranking reversal. These checks validate arithmetic, not the empirical truth of the assumptions.
+Inputs contains the scenario assumptions; CAC_LTV and Churn link retention to discounted contribution; TCO reconciles category totals with annual cash flows; Sensitivity calculates four combinations and break-even prices. Charts contains linked Excel figures. Sources maps claims to documentation. Checks verifies arithmetic and model links, rather than the empirical validity of the assumptions.
 
 ### Boundaries of risk adjustment
 
-The 5% haircut represents expected operating loss in contribution for an otherwise retained account. It excludes exit risk already captured by churn, and is not a discount-rate premium. There is no attempt to estimate correlated platform-wide outages or firm default. Under the alternative convention where year-1 cash requires surviving year-1 churn, LTV = USD 15,299.5612. Both conventions use five end-year cash payments.
+The 5% haircut applies to retained-account contribution and excludes exit risk already captured by churn. Platform-wide correlated losses are not modeled. If year-1 contribution requires surviving year-1 churn, five-year LTV falls to USD 15,299.56. Both conventions discount five end-year payments.
 
 
 ---
 
-## Appendix C | Source & Submission Record
+## Appendix C | Procurement Scope & Submission Evidence
 
-### Official-source audit
+### Procurement qualification
 
-Google’s 28 August 2006 announcement was retrieved under its original title, “Get your people talking.” The current Workspace pricing page and Marketplace overview were retrieved, as were Gmail, Directory and Drive quickstarts. The standard annual-commitment USD 7 and USD 14 price points appear alongside promotions; this is not a five-year rate guarantee. No promotional discount is used in TCO.
+This case provides a five-year planning comparison, not a binding procurement quotation. All hardware, licensing, staffing, backup and migration costs are illustrative budgets. The standard Google price points provide market context; constant prices, staffing and seat counts through 2030 remain explicit modeling assumptions.
 
-Microsoft Learn’s SE overview, Exchange architecture and Exchange Online service description were retrieved. New-Mailbox and New-MigrationBatch were checked in Microsoft’s official documentation repository. The commercial Exchange licensing overview and comparison-price pages returned HTTP 403 even after the network allowlist was corrected. The report therefore makes no exact commercial entitlement claim and models no Exchange Online price. A current licensing/reseller quote remains procurement due diligence, rather than a missing arithmetic input.
+Before procurement, verify that the USD 12,000 annual allowance covers the required Exchange SE entitlement, Exchange Server and Client Access Licenses (CALs), underlying Windows Server licensing, and applicable Software Assurance (SA) or subscription eligibility. Establish the organization’s existing entitlements and obtain dated, like-for-like supplier or reseller quotations. Add any uncovered licensing and infrastructure costs to the model.
 
-Official quickstart code was inspected as documentation only. No live customer tenant, credentials, migration or API endpoint was tested. The numerical models use no measured customer records, market shares, CAC observations or vendor churn series. The five-year cost allowance is not a production-capacity, availability or compliance certification.
+Technical due diligence should test mailbox and calendar migration fidelity, identity and permission mapping, backup restoration, continuity and data-governance requirements. Validate server sizing and resilience before accepting the two-server allowance. Compare a requirements-matched Exchange Online option with both modeled alternatives. No live tenant test or customer migration is claimed.
 
-### Student review and required evidence
+### Submission evidence
 
-This report is a prepared draft for the individual assignment. The submitting student must verify the argument, assumptions, citations and institutional rules governing assistance, and ensure the work accurately reflects their own understanding. Add the name, student ID and course details if the course requires them.
+The final submission must include the institution’s authentic VeriGuide receipt and completed Signed Declaration. The submitting student should review the analysis, calculations and citations and supply any required name, student ID and course information.
 
-The assignment brief specifies Blackboard submission by 16 October 2026, 17:00 HKT. It requires a VeriGuide receipt and Signed Declaration in the appendix. These documents must be generated or completed by the submitting student using the institution’s required process and authentic forms.
+The supplied assignment brief specifies Blackboard submission by 16 October 2026, 17:00 HKT. Insert the required receipt and declaration in this appendix before exporting the final PDF.
 
 | Required item | Status / student action |
 | --- | --- |
 | VeriGuide receipt | NOT INCLUDED. Complete the institutional check and insert the authentic receipt here. |
 | Signed Declaration | NOT INCLUDED. Complete and sign the official declaration; do not treat this page as the declaration. |
-| Final document review | Review all text and calculations; obtain current licensing terms if required by the instructor. |
-| Blackboard submission | NOT PERFORMED. Student uploads the reviewed files and required evidence. |
 
-After inserting receipt/declaration evidence, export the final Word file to PDF again. Confirm that the body remains five A4 pages in two columns and that references and appendices follow it. The body length excludes this appendix, calculation details and references under the supplied brief.
+References and appendices are excluded from the five-page body limit under the supplied assignment brief.

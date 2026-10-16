@@ -10,20 +10,7 @@ ROOT=Path('/workspace/assignment1')
 OUT=ROOT/'deliverables'
 OUT.mkdir(exist_ok=True)
 DATE='2026-10-16'
-SOURCES=[
- dict(id='G1',author='Google',date='2006',title='Get your people talking',url='https://googleblog.blogspot.com/2006/08/get-your-people-talking.html',supports='Historical entry into hosted enterprise applications in 2006.',status='VERIFIED: original official announcement retrieved; dated 28 August 2006.',mirror=''),
- dict(id='G2',author='Google',date='n.d.-a',title='Google Workspace pricing',url='https://workspace.google.com/pricing.html',supports='Product/bundle and current plan/commitment checks only. USD 7 and 14 are scenario inputs, not verified quotes.',status='VERIFIED: official pricing page retrieved. Annual-commitment standard USD 7/14 displayed, with separate promotions; five-year flat prices remain assumptions.',mirror=''),
- dict(id='G3',author='Google',date='n.d.-b',title='Google Workspace Marketplace',url='https://developers.google.com/workspace/marketplace',supports='Third-party app distribution and integration ecosystem; no installed-base or network-effect estimate.',status='VERIFIED: official Marketplace overview retrieved; third-party apps and add-on publishing documented.',mirror=''),
- dict(id='G4',author='Google',date='n.d.-c',title='Gmail API: Python quickstart',url='https://developers.google.com/workspace/gmail/api/quickstart/python',supports='OAuth scopes, credentials and Gmail label-list API in official sample.',status='VERIFIED: official developer page and official GitHub source both retrieved.',mirror='https://raw.githubusercontent.com/googleworkspace/python-samples/main/gmail/quickstart/quickstart.py'),
- dict(id='G5',author='Google',date='n.d.-d',title='Admin SDK Directory API: Python quickstart',url='https://developers.google.com/workspace/admin/directory/v1/quickstart/python',supports='Directory user-list API, OAuth scope and credential dependency.',status='VERIFIED: official developer page and official GitHub source both retrieved.',mirror='https://raw.githubusercontent.com/googleworkspace/python-samples/main/admin_sdk/directory/quickstart.py'),
- dict(id='G6',author='Google',date='n.d.-e',title='Google Drive API: Python quickstart',url='https://developers.google.com/workspace/drive/api/quickstart/python',supports='Drive file metadata access through a scoped API; not proof of full-fidelity migration.',status='VERIFIED: official developer page and official GitHub source both retrieved.',mirror='https://raw.githubusercontent.com/googleworkspace/python-samples/main/drive/quickstart/quickstart.py'),
- dict(id='M1',author='Microsoft',date='n.d.-a',title='Exchange Server licensing overview',url='https://www.microsoft.com/en-us/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview',supports='Licensing due diligence only. USD 12,000/year is an illustrative allowance, not a vendor quotation.',status='PENDING: commercial page returned HTTP 403 after network restoration. SE entitlements and underlying Windows/CAL coverage need a current quote; no price or exact entitlement claim is used.',mirror=''),
- dict(id='M2',author='Microsoft',date='n.d.-b',title='New-Mailbox (ExchangePowerShell)',url='https://learn.microsoft.com/powershell/module/exchangepowershell/new-mailbox',supports='Official applicability lists both Exchange Server SE and Exchange Online; mailbox and user-account creation.',status='VERIFIED: official MicrosoftDocs source retrieved; rendered Learn page not accessed.',mirror='https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-Mailbox.md'),
- dict(id='M3',author='Microsoft',date='n.d.-c',title='New-MigrationBatch (ExchangePowerShell)',url='https://learn.microsoft.com/powershell/module/exchangepowershell/new-migrationbatch',supports='Batched migration requests, endpoints and environment-specific parameters.',status='VERIFIED: official MicrosoftDocs source retrieved; rendered Learn page not accessed.',mirror='https://raw.githubusercontent.com/MicrosoftDocs/office-docs-powershell/main/exchange/exchange-ps/ExchangePowerShell/New-MigrationBatch.md'),
- dict(id='M4',author='Microsoft',date='n.d.-d',title='Exchange Online service description',url='https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description',supports='Exchange Online as the procurement comparator; current price/features not asserted.',status='VERIFIED: official Learn service description retrieved. Commercial pricing page returned HTTP 403; no Exchange Online price is modeled.',mirror=''),
- dict(id='M5',author='Microsoft',date='n.d.-e',title='Exchange Server architecture',url='https://learn.microsoft.com/en-us/exchange/architecture/architecture?view=exchserver-2019',supports='Server-side architecture and deployment responsibilities; SE applicability requires checking.',status='VERIFIED: official Learn architecture page retrieved; current page applies to Subscription Edition.',mirror=''),
- dict(id='M6',author='Microsoft',date='n.d.-f',title='What is new in Exchange Server Subscription Edition (SE)',url='https://learn.microsoft.com/en-us/exchange/new-features/new-features?view=exchserver-2019',supports='Current Exchange Server/SE product context; no retirement or release-date assertion is made.',status='VERIFIED: official Learn SE page retrieved; no retirement or release-date assertion used.',mirror='')
-]
+SOURCES=json.loads((ROOT/'tools/sources_config.json').read_text())
 (OUT/'sources.json').write_text(json.dumps(SOURCES,indent=2),encoding='utf-8')
 with (OUT/'sources.csv').open('w',newline='',encoding='utf-8-sig') as f:
  w=csv.DictWriter(f,fieldnames=list(SOURCES[0]));w.writeheader();w.writerows(SOURCES)
@@ -128,7 +115,7 @@ notes=[
  'Cross-subsidy is a hypothetical USD 30,000 credit against USD 70,000 gross acquisition spending. Net allocated CAC falls, but ecosystem-wide resource cost remains USD 7,000/account. No actual Google transfer is claimed.',
  'TCO: nominal USD cash costs, opening-2026 one-off payments, five annual recurring payments. 200 seats, fixed prices, no tax/inflation/discount, zero residual value. Common connectivity and endpoints are excluded equally.',
  'Sensitivity varies only Google subscription price and Exchange FTE at USD 80,000/FTE/year. A USD 14 plan is a cost stress, not an assertion of equal plan features.',
- 'Sources contains exact URLs, supported claims and verification status. Official Google pages and Microsoft Learn sources were checked. The Microsoft licensing commercial page still returned HTTP 403 and needs manual review. Model budgets are not vendor quotations.',
+ 'Sources maps the official documentation to specific claims and records publication/revision dates. Licensing, staffing and hardware inputs are planning assumptions; procurement requires current entitlements and comparable quotations.',
  'Readiness: see Checks. Cached values are included; open in Excel/LibreOffice to recalculate after changing inputs. External PNG/PDF/SVG figures represent the original baseline and do not auto-refresh.',
  'Submission: student must review all reasoning and citations, add identification as required, complete VeriGuide and the institution’s Signed Declaration, attach authentic evidence and submit via Blackboard.'
 ]
@@ -177,7 +164,7 @@ for i,t in enumerate(range(1,6),17):
  formula(sh,i,5,f'=1/(1+{I("discount")})^A{row}',1/1.1**t)
  formula(sh,i,6,f'=E{row}*F{row}',gp/1.1**t,'usd')
 sh.write('A24','Alternative timing LTV',fmt['label']);formula(sh,23,1,'=B8*(1-B14)',ltv(c,0),'usd')
-note(sh,26,'Base formula: Σ[t=1..5] GP×(1−risk loss)×(1−annual churn)^(t−1)/(1+discount)^t. Alternative timing applies churn before every year’s contribution, including year 1. Neither is a perpetual LTV.')
+note(sh,26,'The report presents the formal LTV equation. This sheet sums five discounted annual contributions, weighted by start-year survival. Alternative timing requires survival through year 1; neither convention includes a terminal value.')
 note(sh,29,'Funding credit changes the cost assigned to the focal product, not total ecosystem resource use. This is a transparent hypothetical cross-subsidy mechanism, not observed Google or Microsoft financial performance.')
 
 sh=S['TCO'];title(sh,'B3 | Buyer-level nominal cash costs, 2026–2030');headers(sh,2,['Cash cost category','Exchange SE (USD)','Google (USD)','Timing / scope'])
@@ -214,7 +201,7 @@ note(sh,14,'Positive savings favour Google. At USD 14/user/month and 0.15 Exchan
 sh=S['Charts'];title(sh,'Figures | Linked Excel charts')
 chart=wb.add_chart({'type':'scatter','subtype':'straight_with_markers'})
 chart.add_series({'name':'Annual churn (illustrative)','categories':'=Churn!$A$4:$A$8','values':'=Churn!$B$4:$B$8','line':{'color':teal},'marker':{'type':'circle','size':7},'data_labels':{'value':True,'num_format':'0.00%'}})
-chart.set_title({'name':'2026–2030 scenarios: c(n)=0.18 exp(−0.10n)'})
+chart.set_title({'name':'Annual churn by integration count | 2026–2030 scenarios'})
 chart.set_x_axis({'name':'Active material integrations, n (count)','min':0,'max':8,'major_unit':2})
 chart.set_y_axis({'name':'Annual customer churn (%)','num_format':'0%','min':0,'max':.22});chart.set_legend({'none':True});chart.set_size({'width':720,'height':420});sh.insert_chart('A4',chart)
 chart=wb.add_chart({'type':'column'})
@@ -222,10 +209,10 @@ chart.add_series({'name':'Five-year TCO (nominal USD)','categories':'=TCO!$B$3:$
 chart.set_title({'name':'200 users | 2026–2030 | Illustrative assumptions'});chart.set_y_axis({'name':'Five-year nominal TCO (USD)','num_format':'$#,##0'});chart.set_legend({'none':True});chart.set_size({'width':720,'height':420});sh.insert_chart('A26',chart)
 note(sh,48,'Baseline TCO: USD 7/user/month and 0.30 Exchange FTE. The line chart uses integration scenarios, not calendar time. External figure files are static exports of the initial baseline.')
 
-sh=S['Sources'];title(sh,'Official sources | Claim mapping and access audit');headers(sh,2,['ID','Organization / date','Title','Official URL','Supported use','Verification status','Official GitHub source'])
-sh.set_column('A:A',8);sh.set_column('B:B',22);sh.set_column('C:C',35);sh.set_column('D:G',52)
+sh=S['Sources'];title(sh,'Official sources | Claim mapping and access audit');headers(sh,2,['ID','Organization / date','Title','Official URL','Supported use','Verification status','Official GitHub source','Citation date basis'])
+sh.set_column('A:A',8);sh.set_column('B:B',22);sh.set_column('C:C',35);sh.set_column('D:H',52)
 for i,s in enumerate(SOURCES,3):
- vals=[s['id'],s['author']+' ('+s['date']+')',s['title'],s['url'],s['supports'],s['status'],s['mirror']]
+ vals=[s['id'],s['author']+' ('+s['date']+')',s['title'],s['url'],s['supports'],s['status'],s['mirror'],(s.get('revision_date') or 'Undated')+' — '+s['date_basis']]
  for j,v in enumerate(vals):sh.write(i,j,v,fmt['label'])
  sh.set_row(i,95)
 note(sh,18,'Access audit date: 16 October 2026. A verified GitHub sample supports only the stated API/documentation claim. It is not a live API test, a product-price verification or evidence of vendor churn/CAC.')

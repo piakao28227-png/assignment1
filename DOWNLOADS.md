@@ -21,4 +21,4 @@
 
 PDF 共 9 页：5 页正文、1 页参考文献、3 页附录。
 VeriGuide receipt、官方 Signed Declaration 和 Blackboard 提交需由提交者本人完成。
-Microsoft 商业授权页的 403 已明确记录；许可费用为模拟预算，不是官方报价。
+许可费用为模拟规划预算；实际采购需核对当前授权权益与报价。
