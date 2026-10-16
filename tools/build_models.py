@@ -13,7 +13,7 @@ DATE='2026-10-16'
 SOURCES=json.loads((ROOT/'tools/sources_config.json').read_text())
 (OUT/'sources.json').write_text(json.dumps(SOURCES,indent=2),encoding='utf-8')
 with (OUT/'sources.csv').open('w',newline='',encoding='utf-8-sig') as f:
- w=csv.DictWriter(f,fieldnames=list(SOURCES[0]));w.writeheader();w.writerows(SOURCES)
+ w=csv.DictWriter(f,fieldnames=list(SOURCES[0]),lineterminator="\n");w.writeheader();w.writerows(SOURCES)
 
 # All monetary, behavioural and workforce parameters are illustrative assumptions.
 inputs=[
@@ -71,6 +71,7 @@ ax.set_title('Churn by integration scenario',loc='left',fontweight='bold',fontsi
 
 fig.subplots_adjust if False else None
 for ext in ['png','pdf','svg']:fig.savefig(OUT/f'churn_chart.{ext}',dpi=240,bbox_inches='tight')
+svg=OUT/'churn_chart.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
 plt.close(fig)
 fig,ax=plt.subplots(figsize=(3.55,2.8),layout='constrained')
 bar=ax.bar(['Exchange SE\non-premises','Google\nWorkspace'],[EX/1000,GW/1000],color=[blue,teal],width=.52)
@@ -79,6 +80,7 @@ ax.set(ylabel='Nominal TCO (USD thousands)',ylim=(0,335));ax.grid(axis='y',alpha
 ax.set_title('200 users | 2026–2030',loc='left',fontweight='bold',fontsize=10,color=blue,pad=10)
 
 for ext in ['png','pdf','svg']:fig.savefig(OUT/f'tco_chart.{ext}',dpi=240,bbox_inches='tight')
+svg=OUT/'tco_chart.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
 plt.close(fig)
 
 # Formula workbook, cached results supplied explicitly for non-calculating readers.
