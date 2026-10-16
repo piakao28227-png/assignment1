@@ -1,0 +1,28 @@
+{
+  "pdf_pages": 9,
+  "body_pages": 5,
+  "reference_pages": 1,
+  "appendix_pages": 3,
+  "page_size": "A4",
+  "body_columns": 2,
+  "body_font": "Arial 11 pt; tables/captions 10 pt",
+  "formula_cells": 155,
+  "independently_recalculated_baseline_checks_passed": 13,
+  "cached_vs_recalculated_differences": 0,
+  "formula_errors": 0,
+  "native_excel_charts": 2,
+  "input_propagation_check": {
+    "inputs": {
+      "n": 8,
+      "google_price": 14,
+      "exchange_fte": 0.15
+    },
+    "ltv": 18678.0424370648,
+    "exchange_tco": 221000,
+    "google_tco": 248000,
+    "google_savings": -27000
+  },
+  "official_source_pages_verified": 11,
+  "pending_source": "M1: Microsoft commercial licensing overview returned HTTP 403; no licensing price or exact entitlement claim used",
+  "submission_status": "Not submitted; student VeriGuide receipt and official Signed Declaration not included"
+}

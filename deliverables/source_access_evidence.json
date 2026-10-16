@@ -1,0 +1,79 @@
+[
+  {
+    "source_id": "G1",
+    "retrieved_file": "google2006.html",
+    "bytes": 112453,
+    "sha256": "1a03166b4ae7fb5982399247232cfb74e5e89514d8600803ec846452aaa07a9f",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "G2",
+    "retrieved_file": "pricing.html",
+    "bytes": 1144491,
+    "sha256": "42ec00c5d34d7608e82641215ca19fbe3d33016d027bf7f808079e6741fc69f3",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "G3",
+    "retrieved_file": "marketplace.html",
+    "bytes": 147374,
+    "sha256": "afb15d7ff6fc964ed9690e4c878e59fc9be448faff86f7a55761ce1fd636177e",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "G4",
+    "retrieved_file": "gmail_page.html",
+    "bytes": 185590,
+    "sha256": "e9634bab973b764ec13be884196ba0dad9496d52a006bbfd5c646705437474b7",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "G5",
+    "retrieved_file": "directory_page.html",
+    "bytes": 196061,
+    "sha256": "ad71f760d92f28974ff902a0a2034ef0e33d59cb49ba0c409fc0434e9b7177e5",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "G6",
+    "retrieved_file": "drive_page.html",
+    "bytes": 187992,
+    "sha256": "09f5171f9f056b5ee26b8abe910786d9ed1a2298a3d3e8c0bea64c52350d5e99",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "M2",
+    "retrieved_file": "ms_mailbox.txt",
+    "bytes": 84368,
+    "sha256": "aeadb489e38263316454a052aed21fc5cf9c1d1440e12d8caf64243667257a0d",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "M3",
+    "retrieved_file": "ms_migration.txt",
+    "bytes": 79653,
+    "sha256": "087e3b15c9f8065d5b234785819504f92274f30ed787c71ef86591af84c7378e",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "M4",
+    "retrieved_file": "online_description.html",
+    "bytes": 71802,
+    "sha256": "e0816dd54127a999192b4e75458419066e3d04361358b2c73137bc3144a6df82",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "M5",
+    "retrieved_file": "architecture.html",
+    "bytes": 47809,
+    "sha256": "26b26ebcda29ef7cb3325c252044e4ee83ebde60b749b802b7ad2957d7287351",
+    "audit_date": "2026-10-16"
+  },
+  {
+    "source_id": "M6",
+    "retrieved_file": "exchangeSE.html",
+    "bytes": 62643,
+    "sha256": "8f6f709c4e9db8e6cb707b8b669d39c7724b700a72564f2ae1434ae67e735ba9",
+    "audit_date": "2026-10-16"
+  }
+]
